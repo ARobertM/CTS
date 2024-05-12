@@ -16,7 +16,4 @@ public class Camera  {
     public String getNumeClient() {
         return numeClient;
     }
-    
-
-    
 }
