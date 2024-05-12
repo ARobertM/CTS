@@ -1,5 +1,6 @@
 package Memento.MementoPersonaje;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Memento {
@@ -9,7 +10,7 @@ public class Memento {
 
     public Memento(String culoarePar, List<String> listaArme, String culoarePiele) {
         this.culoarePar = culoarePar;
-        this.listaArme = listaArme;
+        this.listaArme = new ArrayList<>(listaArme);
         this.culoarePiele = culoarePiele;
     }
 
@@ -18,7 +19,7 @@ public class Memento {
     }
 
     public List<String> getListaArme() {
-        return listaArme;
+        return new ArrayList<>(listaArme);
     }
 
     public String getCuloarePiele() {
