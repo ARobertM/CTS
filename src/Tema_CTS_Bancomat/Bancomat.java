@@ -10,6 +10,20 @@ public class Bancomat {
         this.lei20 = lei20;
         this.lei10 = lei10;
     }
+    public int getLei50() {
+        return lei50;
+    }
+
+
+    public int getLei20() {
+        return lei20;
+    }
+
+
+    public int getLei10() {
+        return lei10;
+    }
+    
 
     public int[] retragereSuma(int suma){
         if(suma % 10 != 0){
@@ -38,6 +52,9 @@ public class Bancomat {
         if(suma != 0){
             throw new ExceptieSumaNullRetrasa("Nu se poate retrage suma dorita");
         }
+        if (suma == 0) {
+            throw new ExceptieSumaNullRetrasa("Suma nu poate fi zero.");
+        }
         lei50 -= retragere[0];
         lei20 -= retragere[1];
         lei10 -= retragere[2];
@@ -49,6 +66,12 @@ public class Bancomat {
 
         System.out.println("s total: " + suma_p);
         return retragere;
+    }
+
+    public void adaugaBancnote(int num50Lei, int num20Lei, int num10Lei) {
+        this.lei50 += num50Lei;
+        this.lei20 += num20Lei;
+        this.lei10 += num10Lei;
     }
 
 
